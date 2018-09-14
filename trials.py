@@ -45,9 +45,14 @@ def setting_exp(expName,expInfo):
 
 def setting_monitor(name, distance, expInfo):
     # Setup Monitor
+    from win32api import GetSystemMetrics
+
     mon = monitors.Monitor(name)
     mon.setDistance(distance)
     mon_size = mon.getSizePix()
+    if mon_size==None:
+        mon_size=[GetSystemMetrics(0),GetSystemMetrics(1)]
+    print(mon_size)
     # Setup Window
     win = visual.Window(
         size=mon_size, fullscr=True, screen=0,

@@ -1,11 +1,10 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import time
 from trials import *
 
-text_instructions="Bem-vindo ao experimento\n Na sequência, você vai encontar uma série de frases apresentadas em sequências de 2, 3, 4, 5, 6 sentenças (em ordem aleatória)\n"" \
-""Sua tarefa vai ser ler as frases de forma natural em voz alta e tentar lembrar a última palavra de cada sentença.\n"
+text_instructions="Bem-vindo ao experimento\n Na sequência, você vai encontar uma série de frases apresentadas em sequências de 2, 3, 4, 5, 6 sentenças (em ordem aleatória \n Sua tarefa vai ser ler as frases de forma natural em voz alta e tentar lembrar a última palavra de cada sentença.\n"
 
 
 # Store info about the experiment session
