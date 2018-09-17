@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="978f9f92-a826-4f05-942a-543385ba7e4e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RST.py" beforeDir="false" afterPath="$PROJECT_DIR$/RST.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/sentences_s1.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/common/sentences_s1.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.py" beforeDir="false" afterPath="$PROJECT_DIR$/temp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trials.py" beforeDir="false" afterPath="$PROJECT_DIR$/trials.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RST.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RST.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RST.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+            <state relative-caret-position="249">
+              <caret line="45" column="20" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="20" />
               <folding>
                 <element signature="e#47#58#0" expanded="true" />
               </folding>
@@ -29,23 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="temp.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/temp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="396" column="14" selection-start-line="396" selection-end-line="397" />
-              <folding>
-                <element signature="e#515#563#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="trials.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="trials.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trials.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1238">
-              <caret line="437" column="27" selection-start-line="437" selection-start-column="27" selection-end-line="437" selection-end-column="27" />
+            <state relative-caret-position="-1417">
+              <caret line="465" column="25" selection-start-line="465" selection-end-line="466" />
               <folding>
                 <element signature="e#47#145#0" expanded="true" />
                 <element signature="e#2112#2845#0" />
@@ -84,8 +69,8 @@
         <option value="$PROJECT_DIR$/instruction_trial.py" />
         <option value="$PROJECT_DIR$/temp_rst.py" />
         <option value="$PROJECT_DIR$/temp.py" />
-        <option value="$PROJECT_DIR$/trials.py" />
         <option value="$PROJECT_DIR$/RST.py" />
+        <option value="$PROJECT_DIR$/trials.py" />
       </list>
     </option>
   </component>
@@ -217,15 +202,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.5226554" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.33006537" />
-      <window_info anchor="bottom" x="14" y="374" width="1892" height="292" id="Run" order="2" weight="0.32461873" />
+      <window_info active="true" anchor="bottom" x="14" y="374" width="1892" height="292" id="Run" order="2" visible="true" weight="0.32461873" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3267974" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3267974" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -442,16 +428,6 @@
     <entry file="file://$USER_HOME$/Documents/psychopy_workshop/Day_2/scripts/s4_extrawork.py" />
     <entry file="file://$USER_HOME$/Documents/psychopy_workshop/Day_5/rst_2_lastrun.py" />
     <entry file="file://$PROJECT_DIR$/temp_rst.py" />
-    <entry file="file://$PROJECT_DIR$/RST.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-          <folding>
-            <element signature="e#47#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/temp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -464,14 +440,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trials.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1238">
-          <caret line="437" column="27" selection-start-line="437" selection-start-column="27" selection-end-line="437" selection-end-column="27" />
+        <state relative-caret-position="-1417">
+          <caret line="465" column="25" selection-start-line="465" selection-end-line="466" />
           <folding>
             <element signature="e#47#145#0" expanded="true" />
             <element signature="e#2112#2845#0" />
             <element signature="e#2955#6264#0" />
             <element signature="e#9708#12153#0" />
             <element signature="e#12252#17506#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RST.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="20" />
+          <folding>
+            <element signature="e#47#58#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -4,16 +4,20 @@
 import time
 from trials import *
 
-experiment_session = 1
+experiment_session = 2
 text_instructions = "Bem-vindo ao experimento\nA seguir, você vai encontar uma série de frases apresentadas em sequências de 2, 3, 4, 5, 6 sentenças (em ordem aleatória).\n" \
                     "Sua tarefa vai ser ler as frases de forma natural, em voz alta e tentar lembrar a última palavra de cada sentença.\nUm simbolo '+' vai parecer no momento quando você deve " \
                     "dizer as palavras a serem lembradas (em qualquer ordem).\n \n" \
                     "Vamos praticar, presione qualquer tecla para começar um sesão de prática."
 
-text_instructions_2 = "Preparado?\nVamos começar com o experimento. Presione qualquer tecla para começar a primeira sessão."
+text_instructions_s1 = "Preparado?\nVamos começar com o experimento. Presione qualquer tecla para começar a primeira sessão."
+
+text_final_s1 = "Pronto!!!\nA primeira sessão terminou. Aguarde ao experimentador para responder as perguntas."
 
 text_instructions_s2 = "Preparado?\nVamos começar com o experimento. Presione qualquer tecla para começar a segunda sessão."
 
+text_final_s2 = "Pronto!!!\nO experimento terminou. Aguarde ao experimentador para responder as perguntas dessa sessão.\n \n" \
+                "Muito obrigado pela participação."
 
 
 # Store info about the experiment session
@@ -33,13 +37,20 @@ if experiment_session == 1:
     practice_trial(win,sentences_practice,thisExp,expInfo)
 
     # Final instructions before experiment
-    instructions_trial(win, text_instructions_2)
+    instructions_trial(win, text_instructions_s1)
 
     # Experiment session 1
 
     # Sentences_session _1
     sentences_s1 = 'common\sentences_s1.xlsx'
     experiment_trial(win,  sentences_s1, thisExp, expInfo)
+
+    #Final message session 1
+    instructions_trial(win, text_final_s1)
+
+    thisExp.abort()  # or data files will save again on exit
+    win.close()
+    core.quit()
 
 elif experiment_session == 2:
 
@@ -55,4 +66,12 @@ elif experiment_session == 2:
     # Experiment session 2
 
     # Sentences_session 2
-    sentences_s1 = 'common\sentences_s2.xlsx'
+    sentences_s2 = 'common\sentences_s2.xlsx'
+    experiment_trial(win, sentences_s2, thisExp, expInfo)
+
+    # Final message session 2 and experiment
+    instructions_trial(win, text_final_s2)
+
+    thisExp.abort()  # or data files will save again on exit
+    win.close()
+    core.quit()

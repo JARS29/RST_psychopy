@@ -437,7 +437,7 @@ def experiment_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
 
     span = [3, 5, 6, 4, 2, 3, 4, 2, 5, 6, 4, 6, 2, 3, 5, 2, 3, 6, 4, 5] # running four times random.sample(range(2,7),5)
     if expInfo['Session'] == '02':
-        span = span.reverse()
+        span = span[::-1]
     recall_time=0.0
     index = 0
     temp = 0
@@ -572,8 +572,5 @@ def experiment_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
     thisExp.saveAsWideText(thisExp.dataFileName + '.csv')
     thisExp.saveAsPickle(thisExp.dataFileName)
     logging.flush()
-    # make sure everything is closed down
-    thisExp.abort()  # or data files will save again on exit
-    win.close()
-    core.quit()
+
 
