@@ -39,6 +39,7 @@ if experiment_session == 1:
 
     # Sentences_session _1
     sentences_s1 = 'common\sentences_s1.xlsx'
+    experiment_trial(win,  sentences_s1, thisExp, expInfo)
 
 elif experiment_session == 2:
 

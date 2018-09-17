@@ -39,7 +39,6 @@ def setting_exp(expName,expInfo):
                                      originPath=None,
                                      savePickle=True, saveWideText=True,
                                      dataFileName=filename)
-
     # save a log file for detail verbose info
     logFile = logging.LogFile(filename + '.log', level=logging.WARNING)
     logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a file
@@ -204,6 +203,8 @@ def recall(win, thisExp, save=False):
                 endExpNow = True
             if len(theseKeys) > 0:  # at least one key was pressed
                 # a response ends the routine
+                key_recall.keys = theseKeys[-1]  # just the last key pressed
+                key_recall.rt = key_recall.clock.getTime()
                 continueRoutine = False
 
         # check if all components have finished
@@ -228,10 +229,9 @@ def recall(win, thisExp, save=False):
             thisComponent.setAutoDraw(False)
     if save:
         if key_recall.keys != None:  # we had a response
-            thisExp.addData('key_recall.rt', key_recall.rt)
-        thisExp.nextEntry()
+            return key_recall.rt
 
-    routineTimer.reset()
+
 
 # blank screen after each sentence
 def blank_screen(win):
@@ -420,24 +420,25 @@ def practice_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
             blank_screen(win)
         if currentLoop.nTotal == ntrial:
             recall(win, thisExp)
-        thisExp.nextEntry()
 
 def experiment_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
-    import random
     experiment_clock = core.Clock()
     trials = data.TrialHandler(nReps=1.0, method='sequential',
                                extraInfo=expInfo, originPath=-1,
                                trialList=data.importConditions(sentences),
                                seed=None, name='practice')
     # text
-    practice_text = visual.TextStim(win=win, name='practice_text',
+    experiment_text = visual.TextStim(win=win, name='experiment_text',
                                     text='',
                                     font='Arial',
                                     pos=[-0.1, 0], height=0.15, wrapWidth=1.7, ori=0,
                                     color=1.0, colorSpace='rgb', opacity=1,
                                     depth=0.0);
 
-    span = random.sample(range(2, 7), 5)
+    span = [3, 5, 6, 4, 2, 3, 4, 2, 5, 6, 4, 6, 2, 3, 5, 2, 3, 6, 4, 5] # running four times random.sample(range(2,7),5)
+    if expInfo['Session'] == '02':
+        span = span.reverse()
+    recall_time=0.0
     index = 0
     temp = 0
     ntrial = 0
@@ -460,19 +461,22 @@ def experiment_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
         t = 0
         if temp == span[index]:
             # continueRoutine = False
-            recall(win, thisExp)
-            span.reverse()
+            recall_time=recall(win, thisExp, save=True)
+            trials.addData('recall.rt', recall_time)
+            blank_screen(win)
             temp = 0
+            index+=1
+
         temp += 1
-        practice_clock.reset()  # clock
+        experiment_clock.reset()  # clock
         frameN = -1
         continueRoutine = True
         routineTimer.add(7.000000)
         # update component parameters for each repeat
-        practice_text.setText(sentences)
-        practice_key = event.BuilderKeyResponse()
+        experiment_text.setText(sentences)
+        experiment_key = event.BuilderKeyResponse()
         # keep track of which components have finished
-        trialComponents = [practice_text, practice_key]
+        trialComponents = [experiment_text, experiment_key]
         for thisComponent in trialComponents:
             if hasattr(thisComponent, 'status'):
                 thisComponent.status = NOT_STARTED
@@ -480,32 +484,32 @@ def experiment_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
         # -------Start Routine "trial"-------
         while continueRoutine and routineTimer.getTime() > 0:
             # get current time
-            t = practice_clock.getTime()
+            t = experiment_clock.getTime()
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
 
             # *text* updates
-            if t >= 0.0 and practice_text.status == NOT_STARTED:
+            if t >= 0.0 and experiment_text.status == NOT_STARTED:
                 # keep track of start time/frame for later
-                practice_text.tStart = t
-                practice_text.frameNStart = frameN  # exact frame index
-                practice_text.setAutoDraw(True)
+                experiment_text.tStart = t
+                experiment_text.frameNStart = frameN  # exact frame index
+                experiment_text.setAutoDraw(True)
             frameRemains = 0.0 + 7 - win.monitorFramePeriod * 0.75  # most of one frame period left
-            if practice_text.status == STARTED and t >= frameRemains:
-                practice_text.setAutoDraw(False)
+            if experiment_text.status == STARTED and t >= frameRemains:
+                experiment_text.setAutoDraw(False)
 
             # *key_resp_2* updates
-            if t >= 0.0 and practice_key.status == NOT_STARTED:
+            if t >= 0.0 and experiment_key.status == NOT_STARTED:
                 # keep track of start time/frame for later
-                practice_key.tStart = t
-                practice_key.frameNStart = frameN  # exact frame index
-                practice_key.status = STARTED
+                experiment_key.tStart = t
+                experiment_key.frameNStart = frameN  # exact frame index
+                experiment_key.status = STARTED
                 # keyboard checking is just starting
                 event.clearEvents(eventType='keyboard')
             frameRemains = 0.0 + 7.0 - win.monitorFramePeriod * 0.75  # most of one frame period left
-            if practice_key.status == STARTED and t >= frameRemains:
-                practice_key.status = STOPPED
-            if practice_key.status == STARTED:
+            if experiment_key.status == STARTED and t >= frameRemains:
+                experiment_key.status = STOPPED
+            if experiment_key.status == STARTED:
                 theseKeys = event.getKeys(keyList=['space'])
 
                 # check for quit:
@@ -513,6 +517,8 @@ def experiment_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
                     endExpNow = True
                 if len(theseKeys) > 0:  # at least one key was pressed
                     # a response ends the routine
+                    experiment_key.keys = theseKeys[-1]  # just the last key pressed
+                    experiment_key.rt = experiment_key.clock.getTime()
                     continueRoutine = False
 
             # check if all components have finished
@@ -536,16 +542,38 @@ def experiment_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
         for thisComponent in trialComponents:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
-        #     print('abc')
-        #     recall(win, expInfo)
-        #     recall_flag=False
-        #     temp=0
-        # else:
-        if temp != span[0]:
-            blank_screen(win)
-        if currentLoop.nTotal == ntrial:
-            recall(win, thisExp)
-        thisExp.nextEntry()
-    return  0
 
+        if temp != span[index]:
+            blank_screen(win)
+
+        if currentLoop.nTotal == ntrial:
+            recall_time=recall(win, thisExp, save=True)
+            trials.addData('recall.rt', recall_time)
+
+
+        if experiment_key.keys != None:  # we had a response
+            trials.addData('experiment_key_read.rt', experiment_key.rt)
+        if len(theseKeys) == 0:  # if the time is reached
+            trials.addData('experiment_key_read.rt', 6.9999306492)
+
+        routineTimer.reset()
+        thisExp.nextEntry()
+
+    # get names of stimulus parameters
+    if trials.trialList in ([], [None], None):
+        params = []
+    else:
+        params = trials.trialList[0].keys()
+    # save data for this loop
+    trials.saveAsExcel(thisExp.dataFileName + '.xlsx', sheetName='trials',
+                       stimOut=params,
+                       dataOut=['all_raw'])
+    # these shouldn't be strictly necessary (should auto-save)
+    thisExp.saveAsWideText(thisExp.dataFileName + '.csv')
+    thisExp.saveAsPickle(thisExp.dataFileName)
+    logging.flush()
+    # make sure everything is closed down
+    thisExp.abort()  # or data files will save again on exit
+    win.close()
+    core.quit()
 
