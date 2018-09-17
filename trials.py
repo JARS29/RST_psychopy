@@ -150,7 +150,7 @@ def instructions_trial(win, text, endExpNow=endExpNow, routineTimer=routineTimer
     routineTimer.reset()
 
 # recall trial
-def recall(win, expInfo):
+def recall(win, thisExp, save=False):
     endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
     recall_clock = core.Clock()
@@ -197,7 +197,7 @@ def recall(win, expInfo):
             win.callOnFlip(key_recall.clock.reset)  # t=0 on next screen flip
             event.clearEvents(eventType='keyboard')
         if key_recall.status == STARTED:
-            theseKeys = event.getKeys()
+            theseKeys = event.getKeys(keyList=['space'])
 
             # check for quit:
             if "escape" in theseKeys:
@@ -222,12 +222,18 @@ def recall(win, expInfo):
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     # -------Ending Routine "trial"-------
+
     for thisComponent in trialComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
+    if save:
+        if key_recall.keys != None:  # we had a response
+            thisExp.addData('key_recall.rt', key_recall.rt)
+        thisExp.nextEntry()
 
     routineTimer.reset()
 
+# blank screen after each sentence
 def blank_screen(win):
 
     blankClock = core.Clock()
@@ -291,9 +297,8 @@ def blank_screen(win):
             thisComponent.setAutoDraw(False)
 
 
-
 # Practice trial
-def practice_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow, routineTimer=routineTimer):
+def practice_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
     practice_clock = core.Clock()
     trials = data.TrialHandler(nReps=1.0, method='sequential',
                                  extraInfo=expInfo, originPath=-1,
@@ -310,7 +315,6 @@ def practice_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow, routi
     span=[2,3]
     temp=0
     ntrial=0
-    recall_flag=False
     thisExp.addLoop(trials)  # add the loop to the experiment
     thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
     # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
@@ -331,12 +335,10 @@ def practice_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow, routi
         if temp==span[0]:
             #continueRoutine = False
             recall_flag=True
-            recall(win, expInfo)
+            recall(win, thisExp)
             span.reverse()
             temp=0
-
         temp += 1
-
         practice_clock.reset()  # clock
         frameN = -1
         continueRoutine = True
@@ -349,8 +351,6 @@ def practice_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow, routi
         for thisComponent in trialComponents:
             if hasattr(thisComponent, 'status'):
                 thisComponent.status = NOT_STARTED
-        print(temp, span)
-
 
         # -------Start Routine "trial"-------
         while continueRoutine and routineTimer.getTime() > 0:
@@ -381,7 +381,7 @@ def practice_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow, routi
             if practice_key.status == STARTED and t >= frameRemains:
                 practice_key.status = STOPPED
             if practice_key.status == STARTED:
-                theseKeys = event.getKeys()
+                theseKeys = event.getKeys(keyList=['space'])
 
                 # check for quit:
                 if "escape" in theseKeys:
@@ -419,8 +419,133 @@ def practice_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow, routi
         if temp!=span[0]:
             blank_screen(win)
         if currentLoop.nTotal == ntrial:
-            print("here")
-            recall(win, expInfo)
-
+            recall(win, thisExp)
         thisExp.nextEntry()
+
+def experiment_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
+    import random
+    experiment_clock = core.Clock()
+    trials = data.TrialHandler(nReps=1.0, method='sequential',
+                               extraInfo=expInfo, originPath=-1,
+                               trialList=data.importConditions(sentences),
+                               seed=None, name='practice')
+    # text
+    practice_text = visual.TextStim(win=win, name='practice_text',
+                                    text='',
+                                    font='Arial',
+                                    pos=[-0.1, 0], height=0.15, wrapWidth=1.7, ori=0,
+                                    color=1.0, colorSpace='rgb', opacity=1,
+                                    depth=0.0);
+
+    span = random.sample(range(2, 7), 5)
+    index = 0
+    temp = 0
+    ntrial = 0
+    thisExp.addLoop(trials)  # add the loop to the experiment
+    thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
+    # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
+    if thisTrial != None:
+        for paramName in thisTrial:
+            exec ('{} = thisTrial[paramName]'.format(paramName))
+
+    for thisTrial in trials:
+        currentLoop = trials
+        ntrial += 1
+        # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
+        if thisTrial != None:
+            for paramName in thisTrial:
+                exec ('{} = thisTrial[paramName]'.format(paramName))
+
+        # ------Prepare to start Routine "trial"-------
+        t = 0
+        if temp == span[index]:
+            # continueRoutine = False
+            recall(win, thisExp)
+            span.reverse()
+            temp = 0
+        temp += 1
+        practice_clock.reset()  # clock
+        frameN = -1
+        continueRoutine = True
+        routineTimer.add(7.000000)
+        # update component parameters for each repeat
+        practice_text.setText(sentences)
+        practice_key = event.BuilderKeyResponse()
+        # keep track of which components have finished
+        trialComponents = [practice_text, practice_key]
+        for thisComponent in trialComponents:
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+
+        # -------Start Routine "trial"-------
+        while continueRoutine and routineTimer.getTime() > 0:
+            # get current time
+            t = practice_clock.getTime()
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+
+            # *text* updates
+            if t >= 0.0 and practice_text.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                practice_text.tStart = t
+                practice_text.frameNStart = frameN  # exact frame index
+                practice_text.setAutoDraw(True)
+            frameRemains = 0.0 + 7 - win.monitorFramePeriod * 0.75  # most of one frame period left
+            if practice_text.status == STARTED and t >= frameRemains:
+                practice_text.setAutoDraw(False)
+
+            # *key_resp_2* updates
+            if t >= 0.0 and practice_key.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                practice_key.tStart = t
+                practice_key.frameNStart = frameN  # exact frame index
+                practice_key.status = STARTED
+                # keyboard checking is just starting
+                event.clearEvents(eventType='keyboard')
+            frameRemains = 0.0 + 7.0 - win.monitorFramePeriod * 0.75  # most of one frame period left
+            if practice_key.status == STARTED and t >= frameRemains:
+                practice_key.status = STOPPED
+            if practice_key.status == STARTED:
+                theseKeys = event.getKeys(keyList=['space'])
+
+                # check for quit:
+                if "escape" in theseKeys:
+                    endExpNow = True
+                if len(theseKeys) > 0:  # at least one key was pressed
+                    # a response ends the routine
+                    continueRoutine = False
+
+            # check if all components have finished
+            if not continueRoutine:  # a component has requested a forced-end of Routine
+                break
+            continueRoutine = False  # will revert to True if at least one component still running
+            for thisComponent in trialComponents:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+
+            # check for quit (the Esc key)
+            if endExpNow or event.getKeys(keyList=["escape"]):
+                core.quit()
+
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+
+        # -------Ending Routine "trial"-------
+        for thisComponent in trialComponents:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
+        #     print('abc')
+        #     recall(win, expInfo)
+        #     recall_flag=False
+        #     temp=0
+        # else:
+        if temp != span[0]:
+            blank_screen(win)
+        if currentLoop.nTotal == ntrial:
+            recall(win, thisExp)
+        thisExp.nextEntry()
+    return  0
+
 
