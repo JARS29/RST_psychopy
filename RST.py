@@ -1,7 +1,6 @@
 ﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import time
 from trials import *
 
 experiment_session = 2
@@ -24,8 +23,12 @@ text_final_s2 = "Pronto!!!\nO experimento terminou. Aguarde ao experimentador pa
 expName = 'Reading Span Test'  # from the Builder filename that created this script
 
 if experiment_session == 1:
+    # Experiment setting
     expInfo = {u'Session': u'01', u'Participant': u''}
     thisExp = setting_exp(expName, expInfo)
+
+    # Labstreaminglayer setting
+    outlet=LSL_initizialization(str(expInfo[u'Session']+'-'+expInfo[u'Participant']))
 
     # Setup monitor
     win = setting_monitor('default', 80, expInfo)
@@ -33,7 +36,7 @@ if experiment_session == 1:
     instructions_trial(win, text_instructions)
 
     # Practice trial
-    sentences_practice='common\sentences_practice.xlsx'
+    sentences_practice = 'common\sentences_practice.xlsx'
     practice_trial(win,sentences_practice,thisExp,expInfo)
 
     # Final instructions before experiment
@@ -43,7 +46,7 @@ if experiment_session == 1:
 
     # Sentences_session _1
     sentences_s1 = 'common\sentences_s1.xlsx'
-    experiment_trial(win,  sentences_s1, thisExp, expInfo)
+    experiment_trial(win,  sentences_s1, thisExp, expInfo, outlet)
 
     #Final message session 1
     instructions_trial(win, text_final_s1)
@@ -53,9 +56,12 @@ if experiment_session == 1:
     core.quit()
 
 elif experiment_session == 2:
-
+    # Experiment setting
     expInfo = {u'Session': u'02', u'Participant': u''}
     thisExp = setting_exp(expName, expInfo)
+
+    # Labstreaminglayer setting
+    outlet=LSL_initizialization(expInfo[u'Session']+expInfo[u'Participant'])
 
     # Setup monitor
     win = setting_monitor('default', 80, expInfo)
@@ -67,7 +73,7 @@ elif experiment_session == 2:
 
     # Sentences_session 2
     sentences_s2 = 'common\sentences_s2.xlsx'
-    experiment_trial(win, sentences_s2, thisExp, expInfo)
+    experiment_trial(win, sentences_s2, thisExp, expInfo, outlet)
 
     # Final message session 2 and experiment
     instructions_trial(win, text_final_s2)

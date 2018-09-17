@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="978f9f92-a826-4f05-942a-543385ba7e4e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RST.py" beforeDir="false" afterPath="$PROJECT_DIR$/RST.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trials.py" beforeDir="false" afterPath="$PROJECT_DIR$/trials.py" afterDir="false" />
     </list>
@@ -14,14 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RST.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RST.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RST.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="45" column="20" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="20" />
-              <folding>
-                <element signature="e#47#58#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-374">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -29,14 +27,40 @@
       <file leaf-file-name="trials.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trials.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1417">
-              <caret line="465" column="25" selection-start-line="465" selection-end-line="466" />
+            <state relative-caret-position="198">
+              <caret line="566" column="28" selection-start-line="566" selection-start-column="28" selection-end-line="566" selection-end-column="28" />
               <folding>
                 <element signature="e#47#145#0" expanded="true" />
+                <element signature="e#646#1828#0" />
                 <element signature="e#2112#2845#0" />
                 <element signature="e#2955#6264#0" />
+                <element signature="e#6322#9697#0" />
                 <element signature="e#9708#12153#0" />
                 <element signature="e#12252#17506#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SendStringMarkers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/labstreaminglayer/LSL/liblsl-Python/examples/SendStringMarkers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="14" selection-start-line="24" selection-end-line="25" />
+              <folding>
+                <element signature="e#82#95#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SendData.py" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/labstreaminglayer/LSL/liblsl-Python/examples/SendData.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="4" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+              <folding>
+                <element signature="e#86#97#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,25 +107,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="RST_psychopy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RST_psychopy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RST_psychopy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RST_psychopy" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -202,16 +208,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.5226554" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.33006537" />
-      <window_info active="true" anchor="bottom" x="14" y="374" width="1892" height="292" id="Run" order="2" visible="true" weight="0.32461873" />
+      <window_info anchor="bottom" x="14" y="374" width="1892" height="292" id="Run" order="2" weight="0.32461873" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3267974" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.97167754" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -230,7 +235,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -238,9 +243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="19" column="6" selection-start-line="19" selection-end-line="20" />
-          <folding>
-            <element signature="e#47#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -260,8 +262,10 @@
           <caret line="444" column="14" lean-forward="true" selection-start-line="444" selection-start-column="14" selection-end-line="444" selection-end-column="14" />
           <folding>
             <element signature="e#47#145#0" expanded="true" />
+            <element signature="e#646#1828#0" />
             <element signature="e#2112#2845#0" />
             <element signature="e#2955#6264#0" />
+            <element signature="e#6322#9697#0" />
             <element signature="e#9708#12153#0" />
             <element signature="e#12252#17506#0" />
           </folding>
@@ -272,9 +276,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-          <folding>
-            <element signature="e#47#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -294,8 +295,10 @@
           <caret line="146" column="12" selection-start-line="146" selection-start-column="12" selection-end-line="146" selection-end-column="12" />
           <folding>
             <element signature="e#47#145#0" expanded="true" />
+            <element signature="e#646#1828#0" />
             <element signature="e#2112#2845#0" />
             <element signature="e#2955#6264#0" />
+            <element signature="e#6322#9697#0" />
             <element signature="e#9708#12153#0" />
             <element signature="e#12252#17506#0" />
           </folding>
@@ -306,9 +309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="175" selection-start-line="6" selection-start-column="175" selection-end-line="6" selection-end-column="175" />
-          <folding>
-            <element signature="e#47#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -329,8 +329,10 @@
           <caret line="87" column="12" lean-forward="true" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
           <folding>
             <element signature="e#47#145#0" expanded="true" />
+            <element signature="e#646#1828#0" />
             <element signature="e#2112#2845#0" />
             <element signature="e#2955#6264#0" />
+            <element signature="e#6322#9697#0" />
             <element signature="e#9708#12153#0" />
             <element signature="e#12252#17506#0" />
           </folding>
@@ -338,13 +340,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RST.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#47#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/Documents/psychopy_workshop/Day_2/scripts/s4_extrawork.py" />
     <entry file="file://$PROJECT_DIR$/temp.py">
@@ -361,9 +357,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="175" selection-start-line="6" selection-start-column="175" selection-end-line="6" selection-end-column="175" />
-          <folding>
-            <element signature="e#47#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -373,8 +366,10 @@
           <caret line="66" column="55" lean-forward="true" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
           <folding>
             <element signature="e#47#145#0" expanded="true" />
+            <element signature="e#646#1828#0" />
             <element signature="e#2112#2845#0" />
             <element signature="e#2955#6264#0" />
+            <element signature="e#6322#9697#0" />
             <element signature="e#9708#12153#0" />
             <element signature="e#12252#17506#0" />
           </folding>
@@ -385,9 +380,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="175" selection-start-line="6" selection-start-column="175" selection-end-line="6" selection-end-column="175" />
-          <folding>
-            <element signature="e#47#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -407,8 +399,10 @@
           <caret line="66" column="55" lean-forward="true" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
           <folding>
             <element signature="e#47#145#0" expanded="true" />
+            <element signature="e#646#1828#0" />
             <element signature="e#2112#2845#0" />
             <element signature="e#2955#6264#0" />
+            <element signature="e#6322#9697#0" />
             <element signature="e#9708#12153#0" />
             <element signature="e#12252#17506#0" />
           </folding>
@@ -416,13 +410,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RST.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#47#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/Documents/psychopy_workshop/Day_5/rst_lastrun.py" />
     <entry file="file://$USER_HOME$/Documents/psychopy_workshop/Day_2/scripts/s4_extrawork.py" />
@@ -438,26 +426,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trials.py">
+    <entry file="file://$USER_HOME$/labstreaminglayer/LSL/liblsl-Python/examples/SendDataAdvanced.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1417">
-          <caret line="465" column="25" selection-start-line="465" selection-end-line="466" />
+        <state relative-caret-position="-144">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
-            <element signature="e#47#145#0" expanded="true" />
-            <element signature="e#2112#2845#0" />
-            <element signature="e#2955#6264#0" />
-            <element signature="e#9708#12153#0" />
-            <element signature="e#12252#17506#0" />
+            <element signature="e#108#119#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RST.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="20" />
+        <state relative-caret-position="-374">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trials.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="566" column="28" selection-start-line="566" selection-start-column="28" selection-end-line="566" selection-end-column="28" />
           <folding>
-            <element signature="e#47#58#0" expanded="true" />
+            <element signature="e#47#145#0" expanded="true" />
+            <element signature="e#646#1828#0" />
+            <element signature="e#2112#2845#0" />
+            <element signature="e#2955#6264#0" />
+            <element signature="e#6322#9697#0" />
+            <element signature="e#9708#12153#0" />
+            <element signature="e#12252#17506#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/labstreaminglayer/LSL/liblsl-Python/examples/SendStringMarkers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="14" selection-start-line="24" selection-end-line="25" />
+          <folding>
+            <element signature="e#82#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/labstreaminglayer/LSL/liblsl-Python/pylsl/pylsl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2601" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/xdf/make_release.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-442">
+          <caret line="58" column="59" lean-forward="true" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/labstreaminglayer/LSL/liblsl-Python/examples/SendData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="4" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+          <folding>
+            <element signature="e#86#97#0" expanded="true" />
           </folding>
         </state>
       </provider>

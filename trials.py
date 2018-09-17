@@ -4,7 +4,8 @@
 from psychopy import gui, visual, core, data, event, logging, monitors
 from psychopy.constants import (NOT_STARTED, STARTED,
                                 STOPPED, FINISHED)
-
+from pylsl import StreamInfo, StreamOutlet
+import time
 import os
 import sys
 reload(sys)
@@ -14,6 +15,14 @@ sys.setdefaultencoding('utf8')
 globalClock = core.Clock()  # to track the time since experiment started
 routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine
 endExpNow = False  # flag for 'escape' or other condition => quit the exp
+
+# Labstreaminglayer
+def LSL_initizialization(user_info):
+    info = StreamInfo('Reading_Span_Test', 'Markers', 1, 0, 'string', str(user_info))
+    outlet = StreamOutlet(info)
+    raw_input('Setting LSL \nPlease press any key for starting')
+    return outlet
+
 
 # Experiment information
 def setting_exp(expName,expInfo):
@@ -40,6 +49,8 @@ def setting_exp(expName,expInfo):
     logFile = logging.LogFile(filename + '.log', level=logging.WARNING)
     logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a file
     return thisExp
+
+
 
 # Monitor
 def setting_monitor(name, distance, expInfo):
@@ -418,7 +429,7 @@ def practice_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
         if currentLoop.nTotal == ntrial:
             recall(win, thisExp)
 
-def experiment_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
+def experiment_trial (win, sentences, thisExp, expInfo,outlet, endExpNow=endExpNow):
     experiment_clock = core.Clock()
     trials = data.TrialHandler(nReps=1.0, method='sequential',
                                extraInfo=expInfo, originPath=-1,
@@ -458,8 +469,12 @@ def experiment_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
         t = 0
         if temp == span[index]:
             # continueRoutine = False
+            outlet.push_sample(['Start_recall'])
+            time.sleep(0.01)
             recall_time=recall(win, thisExp, save=True)
             trials.addData('recall.rt', recall_time)
+            outlet.push_sample(['Finish_recall'])
+            time.sleep(0.01)
             blank_screen(win)
             temp = 0
             index+=1
@@ -544,14 +559,23 @@ def experiment_trial (win, sentences, thisExp, expInfo, endExpNow=endExpNow):
             blank_screen(win)
 
         if currentLoop.nTotal == ntrial:
+            outlet.push_sample(['Start_recall'])
+            time.sleep(0.01)
             recall_time=recall(win, thisExp, save=True)
             trials.addData('recall.rt', recall_time)
+            outlet.push_sample(['Finish_recall'])
+            time.sleep(0.01)
 
 
         if experiment_key.keys != None:  # we had a response
             trials.addData('experiment_key_read.rt', experiment_key.rt)
+            outlet.push_sample(['key_sentence'])
+            time.sleep(0.01)
         if len(theseKeys) == 0:  # if the time is reached
             trials.addData('experiment_key_read.rt', 6.9999306492)
+            outlet.push_sample(['time_sentence'])
+            time.sleep(0.01)
+
 
         routineTimer.reset()
         thisExp.nextEntry()
