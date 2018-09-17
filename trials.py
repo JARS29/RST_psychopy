@@ -1,13 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from psychopy import locale_setup, sound, gui, visual, core, data, event, logging, clock, monitors
-from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,
-                                STOPPED, FINISHED, PRESSED, RELEASED, FOREVER)
-import numpy as np
-from numpy import (sin, cos, tan, log, log10, pi, average,
-                   sqrt, std, deg2rad, rad2deg, linspace, asarray)
-from numpy.random import random, randint, normal, shuffle
+from psychopy import gui, visual, core, data, event, logging, monitors
+from psychopy.constants import (NOT_STARTED, STARTED,
+                                STOPPED, FINISHED)
+
 import os
 import sys
 reload(sys)
