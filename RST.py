@@ -3,7 +3,7 @@
 
 from trials import *
 
-experiment_session = 2
+experiment_session = int(raw_input("Qual o numero da secao? "))
 text_instructions = "Bem-vindo ao experimento\nA seguir, você vai encontar uma série de frases apresentadas em sequências de 2, 3, 4, 5, 6 sentenças (em ordem aleatória).\n" \
                     "Sua tarefa vai ser ler as frases de forma natural, em voz alta e tentar lembrar a última palavra de cada sentença.\nUm simbolo '+' vai parecer no momento quando você deve " \
                     "dizer as palavras a serem lembradas (em qualquer ordem).\n \n" \
