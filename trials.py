@@ -30,9 +30,9 @@ def setting_exp(expName,expInfo):
     _thisDir = os.path.dirname(os.path.abspath(__file__)).decode(sys.getfilesystemencoding())
     os.chdir(_thisDir)
     # Pop-up window
-    dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
-    if dlg.OK == False:
-        core.quit()  # user pressed cancel
+    # dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
+    # if dlg.OK == False:
+    #     core.quit()  # user pressed cancel
     expInfo['date'] = data.getDateStr()  # add a simple timestamp
     expInfo['expName'] = expName
 
@@ -235,9 +235,13 @@ def recall(win, thisExp, save=False):
     for thisComponent in trialComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
+
+    blank_screen(win)
+
     if save:
         if key_recall.keys != None:  # we had a response
             return key_recall.rt
+    routineTimer.reset()
 
 
 
@@ -303,6 +307,8 @@ def blank_screen(win):
     for thisComponent in blankComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
+
+    routineTimer.reset()
 
 
 # Practice trial
@@ -472,10 +478,10 @@ def experiment_trial (win, sentences, thisExp, expInfo,outlet, endExpNow=endExpN
             outlet.push_sample(['Start_recall'])
             time.sleep(0.01)
             recall_time=recall(win, thisExp, save=True)
+            blank_screen(win)
             trials.addData('recall.rt', recall_time)
             outlet.push_sample(['Finish_recall'])
             time.sleep(0.01)
-            blank_screen(win)
             temp = 0
             index+=1
 

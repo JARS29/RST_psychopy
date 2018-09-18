@@ -3,7 +3,10 @@
 
 from trials import *
 
-experiment_session = int(raw_input("Qual o numero da secao? "))
+experiment_session = int(raw_input("Session's number? "))
+
+participant = int(raw_input("User's number? "))
+
 text_instructions = "Bem-vindo ao experimento\nA seguir, você vai encontar uma série de frases apresentadas em sequências de 2, 3, 4, 5, 6 sentenças (em ordem aleatória).\n" \
                     "Sua tarefa vai ser ler as frases de forma natural, em voz alta e tentar lembrar a última palavra de cada sentença.\nUm simbolo '+' vai parecer no momento quando você deve " \
                     "dizer as palavras a serem lembradas (em qualquer ordem).\n \n" \
@@ -21,14 +24,14 @@ text_final_s2 = "Pronto!!!\nO experimento terminou. Aguarde ao experimentador pa
 
 # Store info about the experiment session
 expName = 'Reading Span Test'  # from the Builder filename that created this script
+expInfo = {u'Session': experiment_session, u'Participant': participant}
 
 if experiment_session == 1:
     # Experiment setting
-    expInfo = {u'Session': u'01', u'Participant': u''}
     thisExp = setting_exp(expName, expInfo)
 
     # Labstreaminglayer setting
-    outlet=LSL_initizialization(str(expInfo[u'Session']+'-'+expInfo[u'Participant']))
+    outlet=LSL_initizialization(expInfo[u'Session']+expInfo[u'Participant'])
 
     # Setup monitor
     win = setting_monitor('default', 80, expInfo)
@@ -57,7 +60,6 @@ if experiment_session == 1:
 
 elif experiment_session == 2:
     # Experiment setting
-    expInfo = {u'Session': u'02', u'Participant': u''}
     thisExp = setting_exp(expName, expInfo)
 
     # Labstreaminglayer setting
