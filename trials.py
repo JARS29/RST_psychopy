@@ -449,8 +449,8 @@ def experiment_trial (win, sentences, thisExp, expInfo,outlet, endExpNow=endExpN
                                     color=1.0, colorSpace='rgb', opacity=1,
                                     depth=0.0);
 
-    span = [3, 5, 6, 4, 2, 3, 4, 2, 5, 6, 4, 6, 2, 3, 5, 2, 3, 6, 4, 5] # running four times random.sample(range(2,7),5)
-    if expInfo['Session'] == '02':
+    span = [3, 5, 6, 4, 2]#, 3, 4, 2, 5, 6, 4, 6, 2, 3, 5, 2, 3, 6, 4, 5] # running four times random.sample(range(2,7),5)
+    if expInfo['Session'] == 2:
         span = span[::-1]
     recall_time=0.0
     index = 0
@@ -476,12 +476,12 @@ def experiment_trial (win, sentences, thisExp, expInfo,outlet, endExpNow=endExpN
         if temp == span[index]:
             # continueRoutine = False
             outlet.push_sample(['Start_recall'])
-            time.sleep(0.01)
+            time.sleep(0.001)
             recall_time=recall(win, thisExp, save=True)
             blank_screen(win)
             trials.addData('recall.rt', recall_time)
             outlet.push_sample(['Finish_recall'])
-            time.sleep(0.01)
+            time.sleep(0.001)
             temp = 0
             index+=1
 
@@ -503,17 +503,20 @@ def experiment_trial (win, sentences, thisExp, expInfo,outlet, endExpNow=endExpN
         while continueRoutine and routineTimer.getTime() > 0:
             # get current time
             t = experiment_clock.getTime()
+
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
 
             # *text* updates
             if t >= 0.0 and experiment_text.status == NOT_STARTED:
                 # keep track of start time/frame for later
+                outlet.push_sample(['Start_sentence'])
+                time.sleep(0.001)
                 experiment_text.tStart = t
                 experiment_text.frameNStart = frameN  # exact frame index
                 experiment_text.setAutoDraw(True)
-                outlet.push_sample(['Start_sentence'])
-                time.sleep(0.01)
+
+
             frameRemains = 0.0 + 7 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if experiment_text.status == STARTED and t >= frameRemains:
                 experiment_text.setAutoDraw(False)
@@ -563,28 +566,25 @@ def experiment_trial (win, sentences, thisExp, expInfo,outlet, endExpNow=endExpN
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
 
+        if len(theseKeys) == 0:  # if the time is reached
+            trials.addData('experiment_key_read.rt', 6.9999306492)
+            outlet.push_sample(['time_sentence'])
+            time.sleep(0.001)
+        else:  # we had a response
+            trials.addData('experiment_key_read.rt', experiment_key.rt)
+            outlet.push_sample(['key_sentence'])
+            time.sleep(0.001)
+
         if temp != span[index]:
             blank_screen(win)
 
         if currentLoop.nTotal == ntrial:
             outlet.push_sample(['Start_recall'])
-            time.sleep(0.01)
+            time.sleep(0.001)
             recall_time=recall(win, thisExp, save=True)
             trials.addData('recall.rt', recall_time)
             outlet.push_sample(['Finish_recall'])
             time.sleep(0.01)
-
-
-
-        if len(theseKeys) == 0:  # if the time is reached
-            trials.addData('experiment_key_read.rt', 6.9999306492)
-            outlet.push_sample(['time_sentence'])
-            time.sleep(0.01)
-        else:  # we had a response
-            trials.addData('experiment_key_read.rt', experiment_key.rt)
-            outlet.push_sample(['key_sentence'])
-            time.sleep(0.01)
-
 
         routineTimer.reset()
         thisExp.nextEntry()

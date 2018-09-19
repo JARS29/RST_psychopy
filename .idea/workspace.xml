@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="978f9f92-a826-4f05-942a-543385ba7e4e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/common/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RST_psychopy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RST_psychopy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RST.py" beforeDir="false" afterPath="$PROJECT_DIR$/RST.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/bloco2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/sentences_s2.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/common/sentences_s2.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/test_1.xdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trials.py" beforeDir="false" afterPath="$PROJECT_DIR$/trials.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +18,7 @@
       <file leaf-file-name="RST.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RST.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="127">
               <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
@@ -31,8 +27,8 @@
       <file leaf-file-name="trials.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trials.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="584" column="12" selection-start-line="584" selection-start-column="12" selection-end-line="584" selection-end-column="12" />
+            <state relative-caret-position="25">
+              <caret line="451" column="27" selection-start-line="451" selection-start-column="27" selection-end-line="451" selection-end-column="27" />
               <folding>
                 <element signature="e#12431#17685#0" />
               </folding>
@@ -76,9 +72,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -203,7 +199,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.52214766" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -211,10 +206,10 @@
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.8219373" />
-      <window_info active="true" anchor="bottom" x="14" y="374" width="1892" height="292" id="Run" order="2" visible="true" weight="0.3233618" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.5156695" />
+      <window_info anchor="bottom" x="14" y="374" width="1892" height="292" id="Run" order="2" weight="0.3233618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32621083" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32621083" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -492,13 +487,6 @@
     <entry file="file://$USER_HOME$/xdf/make_release.py" />
     <entry file="file://$USER_HOME$/labstreaminglayer/LSL/liblsl-Python/examples/SendData.py" />
     <entry file="file://$USER_HOME$/PycharmProjects/xdf_test/xdf.py" />
-    <entry file="file://$PROJECT_DIR$/RST.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/CommunitySORN/common/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -515,10 +503,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RST.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trials.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="584" column="12" selection-start-line="584" selection-start-column="12" selection-end-line="584" selection-end-column="12" />
+        <state relative-caret-position="25">
+          <caret line="451" column="27" selection-start-line="451" selection-start-column="27" selection-end-line="451" selection-end-column="27" />
           <folding>
             <element signature="e#12431#17685#0" />
           </folding>
