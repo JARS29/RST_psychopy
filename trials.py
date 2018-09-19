@@ -20,7 +20,7 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 def LSL_initizialization(user_info):
     info = StreamInfo('Reading_Span_Test', 'Markers', 1, 0, 'string', str(user_info))
     outlet = StreamOutlet(info)
-    raw_input('Setting LSL \nPlease press any key for starting')
+    raw_input('Setting LSL \nPlease press Enter for starting')
     return outlet
 
 
@@ -512,6 +512,8 @@ def experiment_trial (win, sentences, thisExp, expInfo,outlet, endExpNow=endExpN
                 experiment_text.tStart = t
                 experiment_text.frameNStart = frameN  # exact frame index
                 experiment_text.setAutoDraw(True)
+                outlet.push_sample(['Start_sentence'])
+                time.sleep(0.01)
             frameRemains = 0.0 + 7 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if experiment_text.status == STARTED and t >= frameRemains:
                 experiment_text.setAutoDraw(False)
@@ -573,13 +575,14 @@ def experiment_trial (win, sentences, thisExp, expInfo,outlet, endExpNow=endExpN
             time.sleep(0.01)
 
 
-        if experiment_key.keys != None:  # we had a response
-            trials.addData('experiment_key_read.rt', experiment_key.rt)
-            outlet.push_sample(['key_sentence'])
-            time.sleep(0.01)
+
         if len(theseKeys) == 0:  # if the time is reached
             trials.addData('experiment_key_read.rt', 6.9999306492)
             outlet.push_sample(['time_sentence'])
+            time.sleep(0.01)
+        else:  # we had a response
+            trials.addData('experiment_key_read.rt', experiment_key.rt)
+            outlet.push_sample(['key_sentence'])
             time.sleep(0.01)
 
 
